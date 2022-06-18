@@ -47,7 +47,7 @@
         <!-- Dashboard TAB -->
         <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel" aria-labelledby="pills-dashboard-tab" tabindex="0">
             <div class="bg-white rounded border p-5 shadow-sm">
-                <h3>Kontrolna ploča</h3>
+                <h3 class="px-2">Kontrolna ploča</h3>
                 <p class="text-muted">Ovdje možete vidjeti statistiku stranice, broj članaka, korisnika, kategorija itd.</p>
                 <div class="row d-flex justify-content-start">
                     <?php generateDashboard(); ?>
@@ -60,7 +60,7 @@
         <!-- Users TAB -->
         <div class="tab-pane fade" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab" tabindex="0">
             <div class="bg-white rounded border p-5 shadow-sm">
-                <h3>Korisnici</h3>
+                <h3 class="px-2">Korisnici</h3>
                 <p class="text-muted">Ovdje možete vidjeti sve korisnike koji su registrirani na ovoj web-stranici.</p>
 
                 <div class="d-flex justify-content-start m-2">
@@ -72,7 +72,7 @@
         <!-- News TAB -->
         <div class="tab-pane fade" id="pills-news" role="tabpanel" aria-labelledby="pills-news-tab" tabindex="0">
             <div class="bg-white rounded border p-5 shadow-sm">
-                <h3>Vijesti</h3>
+                <h3 class="px-2">Vijesti</h3>
                 <p class="text-muted">Ovdje možete vidjeti sve objavljene vijesti.</p>
                 <a href = "add-news.php" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Dodaj novu vijest</a>
                 <div class="d-flex justify-content-start m-2">

@@ -67,9 +67,10 @@
                     $shortDesc = "";
                     $category = "";
                     $photo = "";
+                    $archive = 0;
 
                     if (isset($_GET['id'])) {
-                        echo '<h3>Ažuriranje vijesti</h3>';
+                        echo '<h3 class="px-2">Ažuriranje vijesti</h3>';
                         $id = $_GET['id'];
                         $dbc = connectToDatabase();
                         if ($dbc && is_numeric($id)) {
@@ -82,11 +83,12 @@
                                     $content = $row['content'];
                                     $photo = $row['photo'];
                                     $category = $row['category'];
+                                    $archive = $row['archive'];
                                 }
                             }
                         }
                     } else {
-                        echo '<h3>Dodaj novu vijest</h3>';
+                        echo '<h3 class="px-2">Dodaj novu vijest</h3>';
                     }
 
 
@@ -122,6 +124,14 @@
                                                                                                                     echo "value='$shortDesc'";
                                                                                                                 }
                                                                                                                 ?>>
+                    <div class="form-check mb-2">
+                        <label class="form-check-label" for="archiveCheck">Stavi vijest u arhivu</label>
+                        <input type="checkbox" class="form-check-input" id="archiveCheck" name="archiveCheck" aria-describedby="tosHelp"<?php
+                                                                                                                if ($archive == 1) {
+                                                                                                                    echo "checked";
+                                                                                                                }
+                                                                                                                ?>>
+                    </div>
 
                     <label for="content" class="form-label">Sadržaj</label>
                     <textarea id="tiny" class="mb-2" name="content" aria-describedby="contentHelp"><?php
@@ -129,6 +139,8 @@
                                                                                                         echo $content;
                                                                                                     }
                                                                                                     ?></textarea>
+
+
 
                     <?php
                     if (isset($id)) {
@@ -165,6 +177,10 @@
             $date = date("Y-m-d H:i:s");
             $author = $_SESSION['username'];
             $location = $category . "-img/";
+            $archive = 0;
+            if(isset($_POST['archiveCheck'])){
+                $archive = 1;
+            }
 
 
             if (isset($fileName)) {
@@ -181,10 +197,10 @@
 
             if ($dbc) {
                 if (isset($_POST['submit'])) {
-                    $sql = "INSERT INTO news(title, short_desc, content, author, date, category, photo) values (?, ?, ?, ?, ?, ?, ?)";
+                    $sql = "INSERT INTO news(title, short_desc, content, author, date, category, photo, archive) values (?, ?, ?, ?, ?, ?, ?, ?)";
                     $stmt = mysqli_stmt_init($dbc);
                     if (mysqli_stmt_prepare($stmt, $sql)) {
-                        mysqli_stmt_bind_param($stmt, 'sssssss', $title, $shortDesc, $content, $author, $date, $category, $location);
+                        mysqli_stmt_bind_param($stmt, 'sssssssi', $title, $shortDesc, $content, $author, $date, $category, $location);
                         mysqli_stmt_execute($stmt);
 
                         echo "<p class='text-success'> Vijest uspješno dodana! </p>";
@@ -198,11 +214,12 @@
                             author = ?,
                             date = ?,
                             category = ?,
-                            photo = ?
+                            photo = ?,
+                            archive = ?
                             WHERE id = $id";
                     $stmt = mysqli_stmt_init($dbc);
                     if (mysqli_stmt_prepare($stmt, $sql)) {
-                        mysqli_stmt_bind_param($stmt, 'sssssss', $title, $shortDesc, $content, $author, $date, $category, $location);
+                        mysqli_stmt_bind_param($stmt, 'sssssssi', $title, $shortDesc, $content, $author, $date, $category ,$location, $archive);
                         mysqli_stmt_execute($stmt);
 
                         echo "<p class='text-success'> Vijest uspješno ažurirana! </p>";

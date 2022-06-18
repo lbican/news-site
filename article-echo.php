@@ -10,9 +10,9 @@ function fetchArticles($type, $limit)
 
     if ($dbc) {
         if ($limit) {
-            $query = "SELECT * FROM news WHERE category = '" . $type . "' ORDER BY news.date DESC LIMIT 3;";
+            $query = "SELECT * FROM news WHERE category = '" . $type . "'AND archive = 0 ORDER BY news.date DESC LIMIT 3;";
         } else {
-            $query = "SELECT * FROM news WHERE category = '" . $type . "'ORDER BY news.date DESC;";
+            $query = "SELECT * FROM news WHERE category = '" . $type . "'AND archive = 0 ORDER BY news.date DESC;";
         }
         $result = mysqli_query($dbc, $query);
         if ($result) {

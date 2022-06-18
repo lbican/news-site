@@ -183,6 +183,7 @@ function showNews()
             <th>Datum</th>
             <th>Kategorija</th>
             <th>Slika</th>
+            <th>Arhiva</th>
             <th>Akcija</th>
           </tr>
         </thead>
@@ -196,6 +197,7 @@ function showNews()
         $date = $row['date'];
         $category = $row['category'];
         $photo = $row['photo'];
+        $archive = $row['archive'] == 1 ? 'DA' : 'NE';
         $checkStr = "return confirm('Jeste li sigurni da želite obrisati ovaj članak?')";
 
         echo '
@@ -206,6 +208,7 @@ function showNews()
             <td>' . $date . '</td>
             <td>' . $category . '</td>
             <td><img class="small-img rounded" src ="' . $photo . '"></td>
+            <td>' . $archive . '</td>
             <td>
               
               <form action="delete.php?id=' . $id . '" method="post" onsubmit="' . $checkStr . '">

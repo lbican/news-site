@@ -1,0 +1,9 @@
+Kako postaviti bazu?
+
+1. Unutar koda -> functions.php
+Postaviti ime baze, localhost port itd.
+
+2. Import news_db.sql koda kojeg možete naći u mapi!
+
+3. ADMIN RAČUN: usr: admin, pass:admin 
+ili napravite svoj!

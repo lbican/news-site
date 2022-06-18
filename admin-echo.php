@@ -183,7 +183,7 @@ function showNews()
             <th>Datum</th>
             <th>Kategorija</th>
             <th>Slika</th>
-            <th>Arhiva</th>
+            <th>Status</th>
             <th>Akcija</th>
           </tr>
         </thead>
@@ -197,7 +197,7 @@ function showNews()
         $date = $row['date'];
         $category = $row['category'];
         $photo = $row['photo'];
-        $archive = $row['archive'] == 1 ? 'DA' : 'NE';
+        $archive = $row['archive'] == 1 ? 'ARHIVIRANO' : 'AKTIVNO';
         $checkStr = "return confirm('Jeste li sigurni da želite obrisati ovaj članak?')";
 
         echo '

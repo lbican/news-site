@@ -200,7 +200,7 @@
                     $sql = "INSERT INTO news(title, short_desc, content, author, date, category, photo, archive) values (?, ?, ?, ?, ?, ?, ?, ?)";
                     $stmt = mysqli_stmt_init($dbc);
                     if (mysqli_stmt_prepare($stmt, $sql)) {
-                        mysqli_stmt_bind_param($stmt, 'sssssssi', $title, $shortDesc, $content, $author, $date, $category, $location);
+                        mysqli_stmt_bind_param($stmt, 'sssssssi', $title, $shortDesc, $content, $author, $date, $category, $location, $archive);
                         mysqli_stmt_execute($stmt);
 
                         echo "<p class='text-success'> Vijest uspješno dodana! </p>";

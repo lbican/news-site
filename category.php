@@ -78,11 +78,11 @@
 
         <?php include 'article-echo.php'; 
         if($category == 'pol'){
-            echo '<h3 class = "m-3 fs-2">POLITIKA</h3>';
+            echo '<h3 class = "m-3 px-2 fs-2">POLITIKA</h3>';
 
         }
         else if($category == 'sport'){
-            echo '<h3 class = "m-3 fs-2">SPORT</h3>';
+            echo '<h3 class = "m-3 px-2 fs-2">SPORT</h3>';
         }
         else{
             echo "

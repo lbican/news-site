@@ -20,13 +20,6 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="assets/font/font.css" />
-
-    <style>
-        .container-lg>*,
-        .container-lg {
-            background-color: white;
-        }
-    </style>
 </head>
 
 <body>
@@ -38,7 +31,7 @@
     </div>
 
     <div class="container col col-md-6 col-lg-4  mx-auto p-5 mt-5 mb-5 bg-white rounded shadow-sm">
-        <h3 class="mb-3">Prijava</h3>
+        <h3 class="mb-3 px-2">Prijava</h3>
         <hr class="mb-3">
         <form method="POST">
             <div class="mb-3">

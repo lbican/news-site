@@ -24,13 +24,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="register-validate.js"></script>
 
-
-    <style>
-        .container-lg>*,
-        .container-lg {
-            background-color: white;
-        }
-    </style>
 </head>
 
 <body>
@@ -43,7 +36,7 @@
     </div>
 
     <div class="container col col-md-6 col-lg-4  mx-auto p-5 mt-5 mb-5 bg-white rounded shadow-sm">
-        <h3 class="mb-3">Registracija</h3>
+        <h3 class="mb-3 px-2">Registracija</h3>
         <hr class="mb-3">
         <form method="POST" name="register" id="register">
             <div class="mb-3">

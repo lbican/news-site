@@ -35,16 +35,6 @@
         });
     </script>
 
-    <style>
-        .container-lg>*,
-        .container-lg {
-            background-color: white;
-        }
-
-        #preview {
-            object-fit: contain !important;
-        }
-    </style>
 </head>
 
 <body>

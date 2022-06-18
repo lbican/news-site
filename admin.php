@@ -24,26 +24,7 @@
     <script src="https://kit.fontawesome.com/7e9f05e3d3.js" crossorigin="anonymous"></script>
 
     <style>
-        .container-lg>*,
-        .container-lg {
-            background-color: white;
-        }
-
-        @media (min-width: 992px) {
-            .card-img-top {
-                width: 100%;
-                height: 8vw;
-                object-fit: cover;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .card-img-top {
-                width: 100%;
-                height: 40vw;
-                object-fit: cover;
-            }
-        }
+        
     </style>
 </head>
 

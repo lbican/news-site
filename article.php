@@ -19,38 +19,10 @@
     <script src="https://kit.fontawesome.com/7e9f05e3d3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/font/font.css" />
 
-    <style>
-        .container-lg>*,
-        .container-lg,
-        body {
-            background-color: white;
-        }
-
-        .sizer {
-            max-width: 75% !important;
-            width: 75% !important;
-        }
-
-        h3 {
-            border-left: 1px solid gainsboro;
-            font-size: 36px;
-        }
-
-        .letter-first {
-            font-size: 35px;
-            line-height: 70px;
-        }
-
-        article img {
-            width: 100%;
-            height: 30vw;
-            object-fit: cover;
-        }
-    </style>
 </head>
 
 <body>
-    <main class="container-lg">
+    <main class="container-lg bg-white">
         <?php 
         include "func-php/navbar.php";
         ?>

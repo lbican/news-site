@@ -19,7 +19,7 @@ function generateDashboard()
         $numCategories = $row['numCategories'];
 
         echo '
-        <div class="card m-2 col-lg-4 col-sm-12" style="width: 18rem;">
+        <div class="card m-2 col-lg-4 col-sm-12 admin-card">
           <img src="func-img/news.svg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Broj vijesti</h5>
@@ -29,7 +29,7 @@ function generateDashboard()
           </div>';
 
         echo '
-        <div class="card m-2 col-lg-4 col-sm-12" style="width: 18rem;">
+        <div class="card m-2 col-lg-4 col-sm-12 admin-card">
           <img src="func-img/organize.svg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Broj kategorija</h5>
@@ -45,7 +45,7 @@ function generateDashboard()
       if ($row = mysqli_fetch_array($result)) {
         $users = $row['numUsers'];
         echo '
-        <div class="card m-2 col-lg-4 col-sm-12" style="width: 18rem;">
+        <div class="card m-2 col-lg-4 col-sm-12 admin-card">
           <img src="func-img/user.svg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Broj korisnika</h5>

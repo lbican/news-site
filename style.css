@@ -43,11 +43,12 @@ hr {
     transition: 0.2s;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #1976D2 !important;
     transition: 0.2s;
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
     background-color: #1944d2 !important;
     transition: 0.2s;
 }
@@ -95,4 +96,48 @@ hr {
     .nav-effect {
         transition: box-shadow 0.5s;
     }
+
+    .card-img-top {
+        width: 100% !important;
+        height: 8vw !important;
+        object-fit: cover !important;
+    }
 }
+
+@media (max-width: 991px) {
+    .card-img-top {
+        width: 100% !important;
+        height: 40vw !important;
+        object-fit: cover !important;
+    }
+}
+
+#preview {
+    object-fit: contain !important;
+}
+
+.admin-card{
+    width: 18rem;
+}
+
+.sizer {
+    max-width: 75% !important;
+    width: 75% !important;
+}
+
+h3 {
+    border-left: 1px solid gainsboro;
+    font-size: 36px;
+}
+
+article img {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+}
+
+.card{
+    border: 0;
+}
+
+

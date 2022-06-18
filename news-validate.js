@@ -3,7 +3,8 @@ $(document).ready(function() {
         rules: {
             newsTitle: {
                 required: true,
-                minlength: 5
+                minlength: 5,
+                maxlength: 30
             },
 
             newsCategory: {
@@ -15,7 +16,9 @@ $(document).ready(function() {
             },
 
             newsDesc:{
-                required: true
+                required: true,
+                minlength: 10,
+                maxlength: 100
             },
 
             content:{
@@ -29,7 +32,8 @@ $(document).ready(function() {
         messages: {
             newsTitle: {
                 required: "<div id='titleHelp' class='form-text text-danger'>Morate unijeti naslov vijesti!</div>",
-                minlength: "<div id='titleHelp' class='form-text text-danger'>Naslov ne može biti kraći od 5 slova.</div>",
+                minlength: "<div id='titleHelp' class='form-text text-danger'>Naslov ne može biti kraći od 5 znakova.</div>",
+                maxlength: "<div id='titleHelp' class='form-text text-danger'>Naslov ne može biti duži od 30 znakova.</div>"
 
             },
 
@@ -39,6 +43,8 @@ $(document).ready(function() {
 
             newsDesc: {
                 required: "<div id='descHel' class='form-text text-danger'>Morate upisati kratki opis!</div>",
+                minlength: "<div id='titleHelp' class='form-text text-danger'>Kratki opis vijesti ne može biti kraći od 10 znakova.</div>",
+                maxlength: "<div id='titleHelp' class='form-text text-danger'>Kratki opis vijesti ne može biti duži od 100 znakova.</div>"
             },
 
             formFile: {
@@ -54,6 +60,7 @@ $(document).ready(function() {
             submitHandler: function(form) {
                 form.submit();
             }
+            
         }
     });
 });

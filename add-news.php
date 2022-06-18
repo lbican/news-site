@@ -96,41 +96,50 @@
 
                     ?>
 
-                    <label for="newsTitle" class="form-label">Naslov</label>
-                    <input type="text" class="form-control mb-2" name="newsTitle" aria-describedby="titleHelp" <?php
-                                                                                                                if (isset($id)) {
-                                                                                                                    echo "value='$title'";
-                                                                                                                }
-                                                                                                                ?>>
+                    <div class="mb-2">
+                        <label for="newsTitle" class="form-label">Naslov</label>
+                        <input type="text" class="form-control mb-2" name="newsTitle" aria-describedby="titleHelp" <?php
+                                                                                                                    if (isset($id)) {
+                                                                                                                        echo "value='$title'";
+                                                                                                                    }
+                                                                                                                    ?>>
+                    </div>
 
-                    <label for="newsCategory" class="form-label">Kategorija</label>
-                    <select class="form-select mb-2" name="newsCategory" aria-label="newsCategory" aria-describedby="categoryHelp">
-                        <option value="pol" <?php if (isset($id)) {
-                                                if ($category == "pol")
-                                                    echo "selected";
-                                            } ?>>Politika</option>
-                        <option value="sport" <?php if (isset($id)) {
-                                                    if ($category == "sport")
+                    <div class="mb-2">
+                        <label for="newsCategory" class="form-label">Kategorija</label>
+                        <select class="form-select mb-2" name="newsCategory" aria-label="newsCategory" aria-describedby="categoryHelp">
+                            <option value="pol" <?php if (isset($id)) {
+                                                    if ($category == "pol")
                                                         echo "selected";
-                                                } ?>>Sport</option>
-                    </select>
+                                                } ?>>Politika</option>
+                            <option value="sport" <?php if (isset($id)) {
+                                                        if ($category == "sport")
+                                                            echo "selected";
+                                                    } ?>>Sport</option>
+                        </select>
+                    </div>
 
-                    <label for="formFile" class="form-label">Naslovna slika</label>
-                    <input class="form-control mb-2" accept="image/*" type="file" id="formFile" name="formFile" aria-describedby="imgHelp">
+                    <div class="mb-2">
+                        <label for="formFile" class="form-label">Naslovna slika</label>
+                        <input class="form-control mb-2" accept="image/*" type="file" id="formFile" name="formFile" aria-describedby="imgHelp">
+                    </div>
 
-                    <label for="newsDesc" class="form-label">Kratki opis</label>
-                    <input type="text" class="form-control mb-2" name="newsDesc" aria-describedby="descHelp" <?php
-                                                                                                                if (isset($id)) {
-                                                                                                                    echo "value='$shortDesc'";
-                                                                                                                }
-                                                                                                                ?>>
+                    <div class="mb-2">
+                        <label for="newsDesc" class="form-label">Kratki opis</label>
+                        <input type="text" class="form-control mb-2" name="newsDesc" aria-describedby="descHelp" <?php
+                                                                                                                    if (isset($id)) {
+                                                                                                                        echo "value='$shortDesc'";
+                                                                                                                    }
+                                                                                                                    ?>>
+                    </div>
+
                     <div class="form-check mb-2">
                         <label class="form-check-label" for="archiveCheck">Stavi vijest u arhivu</label>
-                        <input type="checkbox" class="form-check-input" id="archiveCheck" name="archiveCheck" aria-describedby="tosHelp"<?php
-                                                                                                                if ($archive == 1) {
-                                                                                                                    echo "checked";
-                                                                                                                }
-                                                                                                                ?>>
+                        <input type="checkbox" class="form-check-input" id="archiveCheck" name="archiveCheck" aria-describedby="tosHelp" <?php
+                                                                                                                                            if ($archive == 1) {
+                                                                                                                                                echo "checked";
+                                                                                                                                            }
+                                                                                                                                            ?>>
                     </div>
 
                     <label for="content" class="form-label">Sadržaj</label>
@@ -178,7 +187,7 @@
             $author = $_SESSION['username'];
             $location = $category . "-img/";
             $archive = 0;
-            if(isset($_POST['archiveCheck'])){
+            if (isset($_POST['archiveCheck'])) {
                 $archive = 1;
             }
 
@@ -219,7 +228,7 @@
                             WHERE id = $id";
                     $stmt = mysqli_stmt_init($dbc);
                     if (mysqli_stmt_prepare($stmt, $sql)) {
-                        mysqli_stmt_bind_param($stmt, 'sssssssi', $title, $shortDesc, $content, $author, $date, $category ,$location, $archive);
+                        mysqli_stmt_bind_param($stmt, 'sssssssi', $title, $shortDesc, $content, $author, $date, $category, $location, $archive);
                         mysqli_stmt_execute($stmt);
 
                         echo "<p class='text-success'> Vijest uspješno ažurirana! </p>";
